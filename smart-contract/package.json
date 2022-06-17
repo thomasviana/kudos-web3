@@ -1,0 +1,11 @@
+{
+ "name": "kudos",
+ "version": "1.0.0",
+ "description": "Kudos Web3",
+ "author": "Thomas Viana",
+ "dependencies": {
+  "@openzeppelin/contracts": "^4.6.0",
+  "truffle": "5.0.5",
+  "truffle-hdwallet-provider": "^1.0.17"
+ }
+}
