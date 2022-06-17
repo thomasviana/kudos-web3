@@ -1,0 +1,52 @@
+.kudos__navbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+
+ padding: 2rem 6rem;
+}
+
+.kudos__navbar-logo {
+ margin-right: 2rem;
+}
+
+.kudos__navbar-logo img {
+ width: 220px;
+ height: 80px;
+}
+
+.kudos__navbar-connect_wallet {
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+}
+
+.kudos__navbar-connect_wallet button {
+ padding: 0.5rem 1rem;
+ color: #fff;
+ background: #00ca36;
+ font-family: var(--font-family);
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 25px;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+ .kudos__navbar {
+  padding: 2rem 4rem;
+ }
+}
+
+@media screen and (max-width: 550px) {
+ .kudos__navbar {
+  padding: 2rem;
+ }
+
+ .kudos__navbar-connect_wallet {
+  display: none;
+ }
+}
