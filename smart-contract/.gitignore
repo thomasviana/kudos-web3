@@ -41,3 +41,4 @@ package-lock.json
 address
 
 assets
+secrets.json
