@@ -5,7 +5,7 @@
  "author": "Thomas Viana",
  "dependencies": {
   "@openzeppelin/contracts": "^4.6.0",
-  "truffle": "5.0.5",
-  "truffle-hdwallet-provider": "^1.0.17"
+  "@truffle/hdwallet-provider": "^2.0.9",
+  "truffle": "5.0.5"
  }
 }
