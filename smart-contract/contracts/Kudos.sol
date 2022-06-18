@@ -39,7 +39,7 @@ contract Kudos is ERC1155Supply, Ownable {
         );
     }
 
-    function sendKudo(address payable receiver, uint256 tokenId, string memory message ) public {
+    function sendKudos(address payable receiver, uint256 tokenId, string memory message ) public {
         kudos.push(KudosStruct(msg.sender, receiver, message, block.timestamp));
         require(msg.sender != receiver);
         _mint(receiver, tokenId, 1, "");
@@ -48,7 +48,7 @@ contract Kudos is ERC1155Supply, Ownable {
         emit SendMessage(msg.sender, receiver, message, block.timestamp);
     }
 
-    function getAllkudos() public view returns (KudosStruct[] memory) {
+    function getAllKudos() public view returns (KudosStruct[] memory) {
         return kudos;
     }
 
