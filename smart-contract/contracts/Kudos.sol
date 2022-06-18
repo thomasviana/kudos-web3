@@ -10,11 +10,11 @@ import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 
 contract Kudos is ERC1155Supply, Ownable {
-    string private _baseUri;
+    string private _baseUri = "ipfs://bafybeihnu54qrkuw2nb3o6mfzgutqdfwi2zbbtjeuxepzh5skupundxyga/";
     string private _baseExtension = ".json";
     string public name = "More Than Kudos";
     string public symbol = "MTK";
-    uint256 public supply = 0;
+    uint256 public supply = 3; // Initial supply
     mapping(uint256 => string) private _uris;
 
     event SendMessage(address from, address receiver, string message, uint256 timestamp);
@@ -28,8 +28,10 @@ contract Kudos is ERC1155Supply, Ownable {
 
     KudosStruct[] kudos;
 
-    constructor(string memory _initBaseURI) ERC1155(_initBaseURI) {
-        _baseUri = _initBaseURI;
+    constructor() ERC1155(_baseUri) {
+        _mint(msg.sender, 1, 1, "");
+        _mint(msg.sender, 2, 1, "");
+        _mint(msg.sender, 3, 1, "");
     }
 
     function uri(uint256 tokenId) override public view returns (string memory) {
