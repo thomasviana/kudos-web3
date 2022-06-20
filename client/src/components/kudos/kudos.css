@@ -1,0 +1,67 @@
+.kudos__kudos-container__kudos {
+ width: 80%;
+ display: flex;
+ justify-content: flex-start;
+ align-items: flex-start;
+ flex-direction: row;
+ border-radius: 1rem;
+ padding: 20px;
+ border: 2px solid black;
+ border-color: #fff;
+ margin: 1rem;
+}
+
+.kudos__kudos-container__kudos-nft {
+ display: flex;
+ flex: 1;
+ justify-content: center;
+}
+
+.kudos__kudos-container__kudos-nft img {
+ height: 250px;
+ width: 250px;
+ object-fit: cover;
+ border-radius: 8px;
+}
+
+.kudos__kudos-container__kudos-data {
+ flex: 1;
+ margin-left: 2rem;
+}
+
+.kudos__kudos-container__kudos-data h4 {
+ font-family: var(--font-family);
+ font-size: 14px;
+ line-height: 24px;
+ color: var(--color-text);
+}
+
+.kudos__kudos-container__kudos-data p {
+ font-family: var(--font-family);
+ font-size: 14px;
+ line-height: 24px;
+ color: rgb(151, 158, 162);
+}
+
+.kudos__kudos-container__kudos-data div {
+ width: 38px;
+ height: 3px;
+ background: var(--gradient-bar);
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ margin-bottom: 0.4rem;
+}
+
+.kudos__kudos-container__etherscan {
+ color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+ .kudos__kudos-container__kudos-data p {
+  font-size: 14px;
+  line-height: 22px;
+ }
+
+ .kudos__kudos-container__kudos {
+  margin: 1rem 0;
+ }
+}
