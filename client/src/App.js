@@ -1,6 +1,6 @@
 import "./App.css";
 import { CTA, Navbar } from "./components";
-import { Footer, Header } from "./containers";
+import { Footer, Header, KudosList } from "./containers";
 import "./index.css";
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
         <Navbar />
         <Header />
         <CTA />
+        <KudosList />
       </div>
       <Footer />
     </div>

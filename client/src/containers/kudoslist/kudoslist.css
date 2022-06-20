@@ -1,0 +1,24 @@
+.kudos__kudos_list {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+.kudos__kudos_list h1 {
+ font-family: var(--font-family);
+ color: var(--color-title);
+ align-self: center;
+}
+
+.kudos__kudos_list-container {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+
+@media screen and (max-width: 990px) {
+ .kudos__kudos_list {
+  flex-direction: column;
+ }
+}
