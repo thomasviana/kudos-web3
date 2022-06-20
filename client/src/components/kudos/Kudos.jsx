@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { FaEthereum } from 'react-icons/fa';
 import { KudosContext } from '../../context/KudosContext';
+import { contractAddress } from '../../utils/contants';
 import { shortenAddress } from '../../utils/shortenAddress';
 import "./kudos.css";
 
@@ -38,8 +39,9 @@ const Kudos = ({ senderAddress, receiverAddress, timestamp, message, tokenId }) 
         <h4>Message: </h4>
         <p>{message}</p>
       </div>
-      <FaEthereum className='kudos__kudos-container__etherscan' />
-
+      <a href={`https://rinkeby.etherscan.io/address/${contractAddress}`} target="_blank" rel="noreferrer">
+        <FaEthereum className='kudos__kudos-container__etherscan' />
+      </a>
 
     </div>
   );
