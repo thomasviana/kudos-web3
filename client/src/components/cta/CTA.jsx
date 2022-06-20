@@ -6,9 +6,11 @@ const CTA = () => (
       <p>Do you want to know more about MTK?</p>
       <h3>Take a look at the MoreThanKudos collection at OpenSea</h3>
     </div>
-    <div className='kudos__cta-btn'>
-      <button type='button'>View at OpenSea</button>
-    </div>
+    <a href={`https://testnets.opensea.io/collection/more-than-kudos-3qsvk1rpu1`} target="_blank" rel="noreferrer">
+      <div className='kudos__cta-btn'>
+        <button type='button'>View at OpenSea</button>
+      </div>
+    </a>
   </div>
 );
 

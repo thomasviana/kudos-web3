@@ -4,8 +4,7 @@ import { KudosContext } from "../../context/KudosContext";
 import "./kudoslist.css";
 
 const KudosList = () => {
-  const { state, handler } = useContext(KudosContext);
-  console.log(state.kudos);
+  const { state } = useContext(KudosContext);
   return (
     <div className='kudos__kudos_list section__padding' >
       <h1>Kudos list</h1>

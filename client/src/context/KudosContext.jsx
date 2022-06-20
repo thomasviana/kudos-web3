@@ -81,10 +81,7 @@ export const KudosProvider = ({ children }) => {
       promises.push(
         fetch(`https://ipfs.io/ipfs/${nftUri.split('ipfs://')[1]}`)
           .then((res) => res.json())
-          .then((res) => {
-            console.log(res)
-            return res;
-          })
+          .then((res) => res)
       );
     }
     return Promise.all(promises);
@@ -103,7 +100,6 @@ export const KudosProvider = ({ children }) => {
   };
 
   const connectWallet = async () => {
-    console.log('connect');
     try {
       if (!ethereum) return alert("Please install Metamask");
       const accounts = await ethereum.request({
@@ -136,12 +132,10 @@ export const KudosProvider = ({ children }) => {
         const tx = await kudosContract.methods
           .sendKudos(receiverAddress, tokenId, message)
           .send({ from: currentAccount });
-        console.log(tx);
         setIsLoading(false);
         console.log(`Success - ${tx.transactionHash}`);
 
         const kudosCount = await kudosContract.methods.supply().call();
-        console.log(kudosCount);
         setFormData(formInitialState);
         setKudosCount(kudosCount);
 

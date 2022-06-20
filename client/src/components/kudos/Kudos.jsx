@@ -6,11 +6,10 @@ import { shortenAddress } from '../../utils/shortenAddress';
 import "./kudos.css";
 
 const Kudos = ({ senderAddress, receiverAddress, timestamp, message, tokenId }) => {
-  const { state, handler } = useContext(KudosContext);
+  const { state } = useContext(KudosContext);
 
   const getImageUrl = (tokenId) => {
     const ipfsId = state.nftsMetadata.find(nft => nft.id === tokenId).image.split('ipfs://')[1];
-    console.log(ipfsId);
     return `https://ipfs.io/ipfs/${ipfsId}`
   }
 
