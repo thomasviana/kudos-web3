@@ -3,6 +3,8 @@
 :root {
  --font-family: "DM Sans", sans-serif;
 
+ --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #00ca36 99.55%);
+
  --color-bg: #040c18;
  --color-footer: #031b34;
  --color-blog: #042c54;
