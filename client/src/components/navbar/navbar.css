@@ -35,6 +35,27 @@
  border-radius: 5px;
 }
 
+.kudos__navbar-connected_wallet {
+ display: flex;
+ padding: 0.5rem 1rem;
+ color: #fff;
+ font-family: var(--font-family);
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 25px;
+ cursor: pointer;
+ border: 2px solid black;
+ border-radius: 5px;
+ border-color: #fff;
+ align-items: center;
+}
+
+.kudos__navbar-connected_wallet-circle {
+ color: #00ca36;
+ font-size: 18px;
+ margin-right: 4px;
+}
+
 @media screen and (max-width: 700px) {
  .kudos__navbar {
   padding: 2rem 4rem;
