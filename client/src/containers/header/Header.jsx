@@ -1,22 +1,20 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 import nfts from "../../assets/nfts.png";
-import { KudosContext } from '../../context/KudosContext';
+import { Loader } from "../../components";
+import { KudosContext } from "../../context/KudosContext";
 import "./header.css";
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
   <input
     placeholder={placeholder}
     type={type}
-    step='0.0001'
     value={value}
     onChange={(e) => handleChange(e, name)}
   />
 );
 
 const Header = () => {
-  const {
-    state, handler
-  } = useContext(KudosContext);
+  const { state, handler } = useContext(KudosContext);
 
   const handleSubmit = (event) => {
     const { receiverAddress, tokenId, message } = state.formData;
@@ -33,35 +31,44 @@ const Header = () => {
           Connect your wallet, select the NFT and send it to someone with a
           personalized message.
         </p>
-        {state.currentAccount && (<div className='kudos__header-content__form'>
-          <Input
-            placeholder='Receiver address'
-            name='receiverAddress'
-            type='text'
-            handleChange={handler.handleChange}
-          />
-          <Input
-            placeholder='Token ID'
-            name='tokenId'
-            type='text'
-            handleChange={handler.handleChange}
-          />
-          <Input
-            placeholder='Personalized message'
-            name='message'
-            type='text'
-            handleChange={handler.handleChange}
-          />
-        </div>)}
+        {state.currentAccount && (
+          <div className='kudos__header-content__form'>
+            <Input
+              placeholder='Receiver address'
+              name='receiverAddress'
+              type='text'
+              handleChange={handler.handleChange}
+              value={state.formData["receiverAddress"]}
+            />
+            <Input
+              placeholder='Token ID'
+              name='tokenId'
+              type='text'
+              handleChange={handler.handleChange}
+              value={state.formData["tokenId"]}
+            />
+            <Input
+              placeholder='Personalized message'
+              name='message'
+              type='text'
+              handleChange={handler.handleChange}
+              value={state.formData["message"]}
+            />
+          </div>
+        )}
 
-        {state.currentAccount && (<div className='kudos__header-content__mint'>
-          <button type='button' onClick={handleSubmit}>
-            Send NFT
-          </button>
-        </div>)}
+        {state.currentAccount &&
+          (state.isLoading ? (
+            <Loader />
 
+          ) : (
+            <div className='kudos__header-content__mint'>
+              <button type='button' onClick={handleSubmit}>
+                Send NFT
+              </button>
+            </div>
+          ))}
       </div>
-
       <div className='kudos__header-image'>
         <img src={nfts} alt='nft' />
       </div>
