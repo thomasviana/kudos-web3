@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { GoPrimitiveDot } from "react-icons/go";
 import logo from "../../assets/logo-zemoga.png";
 import { KudosContext } from "../../context/KudosContext";
@@ -13,22 +14,27 @@ const Navbar = () => {
       <div className='kudos__navbar-logo'>
         <img src={logo} alt='logo' />
       </div>
-      <div className='kudos__navbar-connect_wallet'>
-        {!state.currentAccount ? (
-          <button type='button' onClick={handler.connectWallet}>
-            Connect Wallet
-          </button>
-        ) : (
-          <div
-            className='kudos__navbar-connected_wallet'
-            type='button'
-            onClick={handler.connectWallet}
-          >
-            <GoPrimitiveDot className='kudos__navbar-connected_wallet-circle' />
-            {shortenAddress(state.currentAccount.toUpperCase())}
-          </div>
-        )}
+      <div className="kudos__navbar-options">
+        <FaDiscord className='kudos__navbar-social' />
+        <FaTwitter className='kudos__navbar-social' />
+        <div className='kudos__navbar-connect_wallet'>
+          {!state.currentAccount ? (
+            <button type='button' onClick={handler.connectWallet}>
+              Connect Wallet
+            </button>
+          ) : (
+            <div
+              className='kudos__navbar-connected_wallet'
+              type='button'
+              onClick={handler.connectWallet}
+            >
+              <GoPrimitiveDot className='kudos__navbar-connected_wallet-circle' />
+              {shortenAddress(state.currentAccount.toUpperCase())}
+            </div>
+          )}
+        </div>
       </div>
+
     </div>
   );
 };
