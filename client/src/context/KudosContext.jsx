@@ -63,7 +63,7 @@ export const KudosProvider = ({ children }) => {
         message: kudos.message,
         tokenId: kudos.tokenId,
       })
-      );
+      ).sort((a, b) => b.timestamp.localeCompare(a.timestamp));
       const nftsMetadata = await fetchNFTMetadata();
       setNftsMetadata(nftsMetadata);
       setKudos(structuredKudos);
